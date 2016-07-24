@@ -26,5 +26,5 @@ if (!isset($_SESSION['valid_user'])) {
 
 include 'leftadmin.php';
 include '../templates/admin_index_tpl.php';
-include '../adminfooter.php';
+include '../footer.php';
 ?>
