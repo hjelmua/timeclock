@@ -25,16 +25,16 @@ if ($email == "none") {
 
 
     <!-- jQuery -->
-    <script src="css/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/timeclock/css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/timeclock/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/timeclock/css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="css/dist/js/sb-admin-2.js"></script>
+    <script src="/timeclock/css/dist/js/sb-admin-2.js"></script>
 
 </body>
 </html>
