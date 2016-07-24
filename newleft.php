@@ -218,31 +218,13 @@ if ($display_weather == 'yes') {
         $feelslike = $temp;
     }
 }
-
+/* jonas testar */
 ?>
-
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-
-<?php
-if ($links == "none") {
-    echo "<!--no toplinks-->\n";
-} else {
-    echo "\n";
-
-    for ($x = 0; $x < count($display_links); $x++) {
-        echo "        <li><a href='$links[$x]' target='_new'><i class='fa fa-dashboard fa-fw'>$display_links[$x]</i></a></li>\n";
-    }
-
-}
-
-
-// display form to submit signin/signout information //
-
-?>
-
+<!--siderbar content-->		
+	<div class="navbar-default sidebar" role="navigation">
+		<div class="sidebar-nav navbar-collapse">
+			<ul class="nav" id="side-menu">
+	   
 <li class="sidebar-search">
 <?php
 echo "        <form name='timeclock' action='$self' method='post'>\n";
@@ -353,17 +335,61 @@ if (!isset($_COOKIE['remember_me'])) {
         echo "</div>\n";
 }
 
-echo "<input type='submit' name='submit_button' value='Submit' class='btn btn-danger btn-lg'></form> </li>\n";
-echo "<!--comment end form -->\n";
-echo "\n";
-?>
+echo "<input type='submit' name='submit_button' value='Submit' class='btn btn-danger btn-lg'></form>\n";
+/* slut jonas testar form */	
 	
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+?>
+</li>
+
+<li class="sidebar-search">
+<?php
+if ($display_weather == "yes") {
+    echo "<label>Weather Conditions:</label>\n";
+    echo "<div>\n";
+    echo "$city\n";
+    echo "</div>\n";
+    echo "<div>\n";
+    echo "<label>Currently:</label> $temp&#176;\n";
+    echo "</div>\n";
+    echo "<div>\n";
+    echo "<label>Feels Like:</label> $feelslike&#176;\n";
+    echo "</div>\n";
+    echo "<div>\n";
+    echo "<label>Skies:</label> $cloud_cover\n";
+    echo "</div>\n";
+    echo "<div>\n";
+    echo "<label>Wind:</label> $wind_dir $wind$mph\n";
+    echo "</div>\n";
+
+    if ($humidity == 'None') {
+	echo "<div>\n";
+        echo "<label>Humidity:</label> $humidity\n";
+	echo "</div>\n";
+    } else {
+	echo "<div>\n";
+        echo "<label>Humidity:</label> $humidity%\n";
+	echo "</div>\n";
+    }
+    echo "<div>\n";
+    echo "<label>Visibility:</label> $visibility\n";
+    echo "</div>\n";
+    echo "<div>\n";
+    echo "<label>Last Updated:</label> $time\n";
+    echo "</div>\n";
+}
+?>
+</li>	
+
+
+
+
+</ul>
+		</div>
+		<!-- /.sidebar-collapse -->
+	</div>
+	<!-- /.navbar-static-side -->
+	<!-- /.siderbar content-->
+</nav>
 
 <?php
 
@@ -398,7 +424,7 @@ if ($request == 'POST') {
     if ($show_display_name == "yes") {
 
         if (!$displayname && !$inout) {
-            echo "   <!--whereisthis-->\n";
+            echo "   <!--whereisthis1-->\n";
             echo "      \n";
             echo "        \n";
             echo "          \n";

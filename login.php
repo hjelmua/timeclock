@@ -4,7 +4,9 @@ session_start();
 include 'config.inc.php';
 include 'header.php';
 include 'topmain.php';
+include 'leftplaceholder.php';
 echo "<title>$title - Admin Login</title>\n";
+
 
 $self = $_SERVER['PHP_SELF'];
 
@@ -41,24 +43,54 @@ if (isset($_SESSION['valid_user'])) {
 
 } else {
 
-    // build form
-
-    echo "<form name='auth' method='post' action='$self'>\n";
-    echo "<table align=center width=210 border=0 cellpadding=7 cellspacing=1>\n";
-    echo "  <tr class=right_main_text><td colspan=2 height=35 align=center valign=top class=title_underline>PHP Timeclock Admin Login</td></tr>\n";
-    echo "  <tr class=right_main_text><td align=left>Username:</td><td align=right><input type='text' name='login_userid'></td></tr>\n";
-    echo "  <tr class=right_main_text><td align=left>Password:</td><td align=right><input type='password' name='login_password'></td></tr>\n";
-    echo "  <tr class=right_main_text><td align=center colspan=2><input type='submit' onClick='admin.php' value='Log In'></td></tr>\n";
-
-    if (isset($login_userid)) {
-        echo "  <tr class=right_main_text><td align=center colspan=2>Could not log you in. Either your username or password is incorrect.</td></tr>\n";
-    }
-
-    echo "</table>\n";
-    echo "</form>\n";
-    echo "<script language=\"javascript\">document.forms['auth'].login_userid.focus();</script>\n";
 }
 
-echo "</body>\n";
-echo "</html>\n";
+    // build form
+?>
+<div id='page-wrapper'>
+	 <div class='row'>
+		  <div class='col-lg-12'>
+ <h1 class='page-header'>PHP Timeclock Admin Login</h1>
+ </div>
+ <!-- /.col-lg-12 -->
+ </div>
+ <!-- /.row -->
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+			    <form name="auth" method='post' action=""$self"">
+
+                            <fieldset>
+                                <div class="form-group">
+					<input class="form-control" type='text' name='login_userid' placeholder="Username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="login_password" type="password" value="">
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+				<input type='submit' class="btn btn-lg btn-success btn-block" onClick='admin.php' value='Log In'>
+                            </fieldset>
+			    <?php
+
+			        if (isset($login_userid)) {
+			            echo "  <p>Could not log you in. Either your username or password is incorrect.\n";
+			        }
+
+			        echo "\n";
+			        echo "</form>\n";
+			        echo "<script language=\"javascript\">document.forms['auth'].login_userid.focus();</script>\n";
+			    ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+<!-- /#page-wrapper login-->
+<?php
+include 'footer.php';
 ?>

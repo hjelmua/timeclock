@@ -15,8 +15,9 @@ if ($use_reports_password == "yes") {
         echo "<title>$title</title>\n";
         include '../admin/header.php';
         include '../admin/topmain.php';
+        include 'reportleft.php';
 
-        echo "<table width=100% border=0 cellpadding=7 cellspacing=1>\n";
+        echo "<table class='table' width=100% border=0 cellpadding=7 cellspacing=1>\n";
         echo "  <tr class=right_main_text><td height=10 align=center valign=top scope=row class=title_underline>PHP Timeclock Reports</td></tr>\n";
         echo "  <tr class=right_main_text>\n";
         echo "    <td align=center valign=top scope=row>\n";
@@ -36,14 +37,13 @@ if ($request == 'GET') {
 
     if ($use_reports_password == "yes") {
         include '../admin/topmain.php';
+        include 'reportleft.php';
     } else {
         include 'topmain.php';
+        include 'reportleft.php';
     }
 
-    echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-    echo "  <tr valign=top>\n";
-    echo "    <td>\n";
-    echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+    echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
     echo "        <tr class=right_main_text>\n";
     echo "          <td valign=top>\n";
     echo "            <br />\n";
@@ -91,7 +91,8 @@ if ($request == 'GET') {
     echo "            <table align=center width=60% border=0 cellpadding=0 cellspacing=3>\n";
     echo "              <tr><td width=30><input type='image' name='submit' value='Edit Time' align='middle'
                       src='../images/buttons/next_button.png'></td><td><a href='index.php'><img src='../images/buttons/cancel_button.png'
-                      border='0'></td></tr></table></form></td></tr>\n";
+                      border='0'></td></tr></table></form></td></tr></table>\n";
+    include 'reportbeforefooter.php';
     include '../footer.php';
     exit;
 
@@ -110,13 +111,12 @@ if ($request == 'GET') {
             $evil_post = '1';
             if ($use_reports_password == "yes") {
                 include '../admin/topmain.php';
+        include 'reportleft.php';
             } else {
                 include 'topmain.php';
+        include 'reportleft.php';
             }
-            echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-            echo "  <tr valign=top>\n";
-            echo "    <td>\n";
-            echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+            echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
             echo "        <tr class=right_main_text>\n";
             echo "          <td valign=top>\n";
             echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -132,13 +132,12 @@ if ($request == 'GET') {
             $evil_post = '1';
             if ($use_reports_password == "yes") {
                 include '../admin/topmain.php';
+        include 'reportleft.php';
             } else {
                 include 'topmain.php';
+        include 'reportleft.php';
             }
-            echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-            echo "  <tr valign=top>\n";
-            echo "    <td>\n";
-            echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+            echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
             echo "        <tr class=right_main_text>\n";
             echo "          <td valign=top>\n";
             echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -150,13 +149,12 @@ if ($request == 'GET') {
             $evil_post = '1';
             if ($use_reports_password == "yes") {
                 include '../admin/topmain.php';
+        include 'reportleft.php';
             } else {
                 include 'topmain.php';
+        include 'reportleft.php';
             }
-            echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-            echo "  <tr valign=top>\n";
-            echo "    <td>\n";
-            echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+            echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
             echo "        <tr class=right_main_text>\n";
             echo "          <td valign=top>\n";
             echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -178,13 +176,12 @@ if ($request == 'GET') {
                     $evil_post = '1';
                     if ($use_reports_password == "yes") {
                         include '../admin/topmain.php';
+        include 'reportleft.php';
                     } else {
                         include 'topmain.php';
+        include 'reportleft.php';
                     }
-                    echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-                    echo "  <tr valign=top>\n";
-                    echo "    <td>\n";
-                    echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+                    echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
                     echo "        <tr class=right_main_text>\n";
                     echo "          <td valign=top>\n";
                     echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -203,13 +200,12 @@ if ($request == 'GET') {
                     $evil_post = '1';
                     if ($use_reports_password == "yes") {
                         include '../admin/topmain.php';
+        include 'reportleft.php';
                     } else {
                         include 'topmain.php';
+        include 'reportleft.php';
                     }
-                    echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-                    echo "  <tr valign=top>\n";
-                    echo "    <td>\n";
-                    echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+                    echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
                     echo "        <tr class=right_main_text>\n";
                     echo "          <td valign=top>\n";
                     echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -227,13 +223,12 @@ if ($request == 'GET') {
             $evil_post = '1';
             if ($use_reports_password == "yes") {
                 include '../admin/topmain.php';
+        include 'reportleft.php';
             } else {
                 include 'topmain.php';
+        include 'reportleft.php';
             }
-            echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-            echo "  <tr valign=top>\n";
-            echo "    <td>\n";
-            echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+            echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
             echo "        <tr class=right_main_text>\n";
             echo "          <td valign=top>\n";
             echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -245,13 +240,12 @@ if ($request == 'GET') {
             $evil_post = '1';
             if ($use_reports_password == "yes") {
                 include '../admin/topmain.php';
+        include 'reportleft.php';
             } else {
                 include 'topmain.php';
+        include 'reportleft.php';
             }
-            echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-            echo "  <tr valign=top>\n";
-            echo "    <td>\n";
-            echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+            echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
             echo "        <tr class=right_main_text>\n";
             echo "          <td valign=top>\n";
             echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -272,13 +266,12 @@ if ($request == 'GET') {
                     $evil_post = '1';
                     if ($use_reports_password == "yes") {
                         include '../admin/topmain.php';
+        include 'reportleft.php';
                     } else {
                         include 'topmain.php';
+        include 'reportleft.php';
                     }
-                    echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-                    echo "  <tr valign=top>\n";
-                    echo "    <td>\n";
-                    echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+                    echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
                     echo "        <tr class=right_main_text>\n";
                     echo "          <td valign=top>\n";
                     echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -297,13 +290,12 @@ if ($request == 'GET') {
                     $evil_post = '1';
                     if ($use_reports_password == "yes") {
                         include '../admin/topmain.php';
+        include 'reportleft.php';
                     } else {
                         include 'topmain.php';
+        include 'reportleft.php';
                     }
-                    echo "<table width=100% height=89% border=0 cellpadding=0 cellspacing=1>\n";
-                    echo "  <tr valign=top>\n";
-                    echo "    <td>\n";
-                    echo "      <table width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
+                    echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
                     echo "        <tr class=right_main_text>\n";
                     echo "          <td valign=top>\n";
                     echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
@@ -354,7 +346,8 @@ if ($request == 'GET') {
         echo "            <table align=center width=60% border=0 cellpadding=0 cellspacing=3>\n";
         echo "              <tr><td width=30><input type='image' name='submit' value='Edit Time' align='middle'
                       src='../images/buttons/next_button.png'></td><td><a href='index.php'><img src='../images/buttons/cancel_button.png'
-                      border='0'></td></tr></table></form></td></tr>\n";
+                      border='0'></td></tr></table></form></td></tr></table>\n";
+    include 'reportbeforefooter.php';
         include '../footer.php';
         exit;
     }

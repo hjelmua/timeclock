@@ -2,15 +2,16 @@
 
 ?>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 <?php
 if ($logo == "none") {
     echo "  <a class='navbar-brand' href='#'>PHP Timeclock</a>\n";
@@ -19,10 +20,10 @@ if ($logo == "none") {
 }
 ?>
     </div>
-<!-- /.navbar-header -->
 
-
-<ul class="nav navbar-top-links navbar-right">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
 <?php
 if (isset($_SESSION['valid_user'])) {
     $logged_in_user = $_SESSION['valid_user'];
@@ -47,8 +48,8 @@ echo "$todaydate</a></li>\n";
 ?>
 
 
-
-      
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
 <li><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 <li><a href="login.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Administration</a></li>
 <?php
@@ -65,7 +66,9 @@ if ((isset($_SESSION['valid_user'])) || (isset($_SESSION['valid_reports_user']))
 }
 ?>
       </ul>
-<!-- /.navbar-top-links -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 
 

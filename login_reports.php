@@ -4,6 +4,7 @@ session_start();
 include 'config.inc.php';
 include 'header.php';
 include 'topmain.php';
+include 'leftplaceholder.php';
 echo "<title>$title - Reports Login</title>\n";
 
 $self = $_SERVER['PHP_SELF'];
@@ -37,21 +38,45 @@ if (isset($_SESSION['valid_reports_user'])) {
 
     // build form
 
-    echo "<form name='auth' method='post' action='$self'>\n";
-    echo "<table align=center width=210 border=0 cellpadding=7 cellspacing=1>\n";
-    echo "  <tr class=right_main_text><td colspan=2 height=35 align=center valign=top class=title_underline>PHP Timeclock Reports Login</td></tr>\n";
-    echo "  <tr class=right_main_text><td align=left>Username:</td><td align=right><input type='text' name='login_userid'></td></tr>\n";
-    echo "  <tr class=right_main_text><td align=left>Password:</td><td align=right><input type='password' name='login_password'></td></tr>\n";
-    echo "  <tr class=right_main_text><td align=center colspan=2><input type='submit' onClick='admin.php' value='Log In'></td></tr>\n";
+    echo "<div id='page-wrapper'>\n";
+    echo "<div class='row'>\n";
+    echo "<div class='col-lg-12'>\n";
+    echo "<h1 class='page-header'>PHP Timeclock Reports Login</h1>\n";
+    echo "</div>\n";
+    echo "<!-- /.col-lg-12 -->\n";
+    echo "</div>\n";
+    echo "<!-- /.row -->\n";
+    echo "    <div class='row'>\n";
+    echo "        <div class='col-md-4 col-md-offset-4'>\n";
+    echo "            <div class='login-panel panel panel-default'>\n";
+    echo "                <div class='panel-heading'>\n";
+    echo "                    <h3 class='panel-title'>Please Sign In</h3>\n";
+    echo "                </div>\n";
+    echo "                <div class='panel-body'>\n";
+    echo "		    <form name='auth' method='post' action=''$self''>\n";
+    echo "                        <fieldset>\n";
+    echo "                            <div class='form-group'>\n";
+    echo "				<input class='form-control' type='text' name='login_userid' placeholder='Username' autofocus>\n";
+    echo "                            </div>\n";
+    echo "                            <div class='form-group'>\n";
+    echo "                                <input class='form-control' placeholder='Password' name='login_password' type='password' value=''>\n";
+    echo "                            </div>\n";
+    echo "                            <!-- Change this to a button or input when using this as a form -->\n";
+    echo "			<input type='submit' class='btn btn-lg btn-success btn-block' onClick='admin.php' value='Log In'>\n";
+    echo "                        </fieldset>\n";
 
     if (isset($login_userid)) {
-        echo "  <tr class=right_main_text><td align=center colspan=2>Could not log you in. Either your username or password is incorrect.</td></tr>\n";
+        echo "  <p>Could not log you in. Either your username or password is incorrect.</p>\n";
     }
-    echo "</table>\n";
     echo "</form>\n";
     echo "<script language=\"javascript\">document.forms['auth'].login_userid.focus();</script>\n";
 }
 
-echo "</body>\n";
-echo "</html>\n";
+echo "            </div>\n";
+echo "        </div>\n";
+echo "    </div>\n";
+echo "</div>\n";
+    echo "</div>\n";
+    echo "<!-- /#page-wrapper login-->\n";
+include 'footer.php';
 ?>

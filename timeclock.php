@@ -12,16 +12,18 @@ if (!isset($_GET['printer_friendly'])) {
 
     include 'topmain.php';
     include 'leftmain.php';
+/*    include 'newleft.php';*/
 }
 
 echo "<title>$title</title>\n";
 $current_page = "timeclock.php";
 
 if (!isset($_GET['printer_friendly'])) {
-    echo "    <td align=left class=right_main scope=col>\n";
-    echo "      <table width=100% height=100% border=0 cellpadding=5 cellspacing=1>\n";
-    echo "        <tr class=right_main_text>\n";
-    echo "          <td valign=top>\n";
+    echo "  <div id='page-wrapper'>\n";
+    echo "  <!--vad3-->\n";
+    echo "      \n";
+    echo "        \n";
+    echo "       \n";
 }
 
 // code to allow sorting by Name, In/Out, Date, Notes //
@@ -169,18 +171,26 @@ $tclock_time = date($timefmt, $tclock_stamp);
 $tclock_date = date($datefmt, $tclock_stamp);
 $report_name = "Current Status Report";
 
-echo "            <table width=100% align=center class=misc_items border=0 cellpadding=3 cellspacing=0>\n";
+echo "            <!--whereisthis7-->\n";
 
 if (!isset($_GET['printer_friendly'])) {
-    echo "              <tr class=display_hide>\n";
+    echo "               <!--whereisthis8 print friendly-->\n";
 } else {
-    echo "              <tr>\n";
+    echo "              <!--whereisthis9 print friendly-->\n";
 }
 
-echo "                <td nowrap style='font-size:9px;color:#000000;padding-left:10px;'>$report_name&nbsp;&nbsp;---->&nbsp;&nbsp;As of: $tclock_time, 
-                    $tclock_date</td></tr>\n";
-echo "            </table>\n";
+echo "               <div class='row'>\n";
+echo "               <div class='col-lg-12'>\n";
+echo "               <h1 class='page-header'> $report_name ---> As of: $tclock_time,  $tclock_date</h1>\n";
+echo "          </div>\n";
+echo "          <!-- /.col-lg-12 -->  \n";
+echo "          </div> \n";
+echo "          <!-- /.row -->  \n";
+/* include 'placeholder.php'; */
 include 'display.php';
+include 'weather.php';
+echo "          </div> \n";
+echo "          <!-- /.page-wrapper -->  \n";
 
 if (!isset($_GET['printer_friendly'])) {
     include 'footer.php';

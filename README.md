@@ -1,6 +1,12 @@
 About
 =====
 
+A fork of timeclock that uses bootstrap
+
+The groundwork for this is from https://github.com/andrew867/timeclock. Read the Readme file there to setup the database.
+
+I used http://startbootstrap.com/template-overviews/sb-admin-2/ bootstrap theme
+
 This project is PHP Timeclock v1.04 with the Punchclock v0.8 add-on already installed.
 
 
