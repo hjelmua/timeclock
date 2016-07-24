@@ -19,7 +19,7 @@ username and password information!
 
 $db_hostname = "localhost";
 $db_username = "timeclock";
-$db_password = "P4ssw0rd1!";
+$db_password = "Password!";
 $db_name = "timeclock";
 
 
