@@ -13,7 +13,7 @@ $row_color = ($row_count % 2) ? $color2 : $color1;
 
 if (!isset($_SESSION['valid_user'])) {
 
-    echo "<table width=100% border=0 cellpadding=7 cellspacing=1>\n";
+    echo "<table class='table' width=100% border=0 cellpadding=7 cellspacing=1>\n";
     echo "  <tr class=right_main_text><td height=10 align=center valign=top scope=row class=title_underline>PHP Timeclock Administration</td></tr>\n";
     echo "  <tr class=right_main_text>\n";
     echo "    <td align=center valign=top scope=row>\n";
@@ -26,5 +26,5 @@ if (!isset($_SESSION['valid_user'])) {
 
 include 'leftadmin.php';
 include '../templates/admin_index_tpl.php';
-include '../footer.php';
+include '../adminfooter.php';
 ?>

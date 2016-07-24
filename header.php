@@ -72,7 +72,7 @@ if ($use_client_tz == "yes") {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap Core CSS -->
-    <link href="css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@ if ($use_client_tz == "yes") {
     <link href="css/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
