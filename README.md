@@ -54,6 +54,7 @@ TESTED:
  -  PHP 4.34, 5.1.2 with mysql support
  -  MySQL 3.23.49, 4.0.17, 5.0.18
  -  Apache 1.3.22, 1.3.29, 2.2.0
+ -  Nginx 1.11.1
  -  Firefox 1.0 - 1.5.0.4, Firefox 1.0 Preview Release, IE 6.0 SP1, IE 6.0 SP2 for XP, IE 7.0 beta 2
 
 Any version of mysql or webserver software that supports php, whether it's an earlier 
