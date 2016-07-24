@@ -43,22 +43,32 @@ if ($request == 'GET') {
         include 'reportleft.php';
     }
 
+
+
+
+    echo "    <div id='page-wrapper'>\n";
+    echo "               <div class='row'>\n";
+    echo "                   <div class='col-lg-12'>\n";
+    echo "            <br />\n";    
+    echo "   <div class='alert alert-info'><i class='glyphicon glyphicon-info-sign'></i> This report will display all information pertaining to punch-in/out times that have been added, edited, or deleted from PHP <a href='#' class='alert-link'>Timeclock</a>.\n";
+    echo "                                </div>\n";  
+    echo "                       <h1 class='page-header'><i class='glyphicon glyphicon-list-alt'></i> Audit Log</h1>\n";
+    echo "                   </div>\n";
+    echo "                   <!-- /.col-lg-12 -->\n";
+    echo "               </div>\n";
+    echo "               <!-- /.row -->\n";
+    echo "               <div class='row'>\n";
+    echo "                  <div class='col-lg-12'>\n";
     echo "      <table class='table' width=100% height=100% border=0 cellpadding=10 cellspacing=1>\n";
     echo "        <tr class=right_main_text>\n";
     echo "          <td valign=top>\n";
     echo "            <br />\n";
     echo "            <form name='form' action='$self' method='post' onsubmit=\"return isFromOrToDate();\">\n";
-    echo "            <table align=center class=table_border width=60% border=0 cellpadding=0 cellspacing=3>\n";
-    echo "              <tr><td class=table_rows width=20 align=center><img src='../images/icons/information.png' /></td><td class=table_rows
-                      style='color:#3366CC;'>This report will display all information pertaining to punch-in/out times that have been 
-                      added, edited, or deleted from PHP Timeclock.</td></tr>\n";
-    echo "            </table>\n";
     echo "            <br />\n";
 
-
-    echo "            <table align=center class=table_border width=60% border=0 cellpadding=3 cellspacing=0>\n";
+    echo "            <table align=center class=table width=60% border=0 cellpadding=3 cellspacing=0>\n";
     echo "              <tr>\n";
-    echo "                <th class=rightside_heading nowrap halign=left colspan=3><img src='../images/icons/report.png' />&nbsp;&nbsp;&nbsp;Audit Log</th>
+    echo "                <th colspan=3></th>
                     </tr>\n";
     echo "              <tr><td height=15></td></tr>\n";
     echo "              <input type='hidden' name='date_format' value='$js_datefmt'>\n";
