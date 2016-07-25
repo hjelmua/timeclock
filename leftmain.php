@@ -468,7 +468,7 @@ if ($request == 'POST') {
     $month = gmdate('m', $time);
     $day = gmdate('d', $time);
     $year = gmdate('Y', $time);
-    $tz_stamp = mktime($hour, $min, $sec, $month, $day, $year);
+    $tz_stamp = time($hour, $min, $sec, $month, $day, $year);
 
     if ($use_passwd == "no") {
 
