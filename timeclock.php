@@ -19,7 +19,7 @@ echo "<title>$title</title>\n";
 $current_page = "timeclock.php";
 
 if (!isset($_GET['printer_friendly'])) {
-    echo "  <div id='page-wrapper'>\n";
+    echo " <!-- <div id='page-wrapper'> -->\n";
     echo "  <!--vad3-->\n";
     echo "      \n";
     echo "        \n";
@@ -180,10 +180,28 @@ if (!isset($_GET['printer_friendly'])) {
 }
 
 echo "               <div class='row'>\n";
-echo "               <div class='col-lg-12'>\n";
-echo "               <h1 class='page-header'> $report_name ---> As of: $tclock_time,  $tclock_date</h1>\n";
+echo "               <div class='col-lg-6'>\n";
+echo "               <h1 class='page-header'> $report_name</h1>\n";
 echo "          </div>\n";
-echo "          <!-- /.col-lg-12 -->  \n";
+echo "          <!-- /.col-lg-8 -->  \n";
+
+echo "          <!-- mixed -->  \n";
+echo '<div class="col-lg-3">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-clock-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">'; 
+echo "$tclock_time</div><div>As of: $tclock_date</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+echo "          <!-- /.mixed -->  \n";
 echo "          </div> \n";
 echo "          <!-- /.row -->  \n";
 /* include 'placeholder.php'; */

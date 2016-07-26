@@ -365,6 +365,10 @@ echo "\n";
             <!-- /.navbar-static-side -->
         </nav>
 
+<div id="page-wrapper">
+<!-- /. all leftmain functions must be above page-wrapper  -->
+
+
 <?php
 
 
@@ -389,7 +393,15 @@ if ($request == 'POST') {
     }
 
     if (!isset($tmp_inout)) {
-        echo "In/Out Status is not in the database.\n";
+    	echo '<div class="row">
+    	                <div class="col-lg-6"><p>
+    	                            <div class="alert alert-danger">
+    	                                <i class="fa fa-warning fw"></i> In/Out Status is not in the database.
+    	                            </div>
+    	</p></div>
+    	<!-- /.col-lg-6 -->
+    	</div>
+    	<!-- /.row -->';
         exit;
     }
 
@@ -398,23 +410,29 @@ if ($request == 'POST') {
     if ($show_display_name == "yes") {
 
         if (!$displayname && !$inout) {
-            echo "   <!--whereisthis-->\n";
-            echo "      \n";
-            echo "        \n";
-            echo "          \n";
-            echo "<br />\n";
-            echo "You have not chosen a username or a status. Please try again.\n";
+	    	echo '<div class="row">
+	    	                <div class="col-lg-6"><p>
+	    	                            <div class="alert alert-danger">
+	    	                                <i class="fa fa-warning fw"></i> You have not chosen a username or a status. Please try again.
+	    	                            </div>
+	    	</p></div>
+	    	<!-- /.col-lg-6 -->
+	    	</div>
+	    	<!-- /.row -->';
             include 'footer.php';
             exit;
         }
 
         if (!$displayname) {
-            echo "    <!--whereisthis2-->\n";
-            echo "      \n";
-            echo "        \n";
-            echo "          \n";
-            echo "<br />\n";
-            echo "You have not chosen a username. Please try again.\n";
+	    	echo '<div class="row">
+	    	                <div class="col-lg-6"><p>
+	    	                            <div class="alert alert-danger">
+	    	                                <i class="fa fa-warning fw"></i> You have not chosen a username. Please try again.
+	    	                            </div>
+	    	</p></div>
+	    	<!-- /.col-lg-6 -->
+	    	</div>
+	    	<!-- /.row -->';
             include 'footer.php';
             exit;
         }
@@ -422,23 +440,29 @@ if ($request == 'POST') {
     } elseif ($show_display_name == "no") {
 
         if (!$fullname && !$inout) {
-            echo "    <!--whereisthis3-->\n";
-            echo "      \n";
-            echo "        \n";
-            echo "          \n";
-            echo "<br />\n";
-            echo "You have not chosen a username or a status. Please try again.\n";
+	    	echo '<div class="row">
+	    	                <div class="col-lg-6"><p>
+	    	                            <div class="alert alert-danger">
+	    	                                <i class="fa fa-warning fw"></i> You have not chosen a username or a status. Please try again.
+	    	                            </div>
+	    	</p></div>
+	    	<!-- /.col-lg-6 -->
+	    	</div>
+	    	<!-- /.row -->';
             include 'footer.php';
             exit;
         }
 
         if (!$fullname) {
-            echo "    <!--whereisthis4-->\n";
-            echo "      \n";
-            echo "        \n";
-            echo "          \n";
-            echo "<br />\n";
-            echo "You have not chosen a username. Please try again.\n";
+	    	echo '<div class="row">
+	    	                <div class="col-lg-6"><p>
+	    	                            <div class="alert alert-danger">
+	    	                                <i class="fa fa-warning fw"></i> You have not chosen a username. Please try again.
+	    	                            </div>
+	    	</p></div>
+	    	<!-- /.col-lg-6 -->
+	    	</div>
+	    	<!-- /.row -->';
             include 'footer.php';
             exit;
         }
@@ -446,18 +470,44 @@ if ($request == 'POST') {
     }
 
     if (!$inout) {
-        echo "    <!--whereisthis5-->\n";
-        echo "      \n";
-        echo "       \n";
-        echo "       \n";
-        echo "<br />\n";
-        echo "You have not chosen a status. Please try again.\n";
+    	echo '<div class="row">
+    	                <div class="col-lg-6"><p>
+    	                            <div class="alert alert-danger">
+    	                                <i class="fa fa-warning fw"></i> You have not chosen a status. Please try again.
+    	                            </div>
+    	</p></div>
+    	<!-- /.col-lg-6 -->
+    	</div>
+    	<!-- /.row -->';
         include 'footer.php';
         exit;
     }
 
     @$fullname = addslashes($fullname);
     @$displayname = addslashes($displayname);
+// stop double in or out //
+// this snipped only works if show_display_name: is yes and needs to be improved //
+
+
+$punch_check = mysql_query("select tstamp from ".$db_prefix."employees where displayname = '".$displayname."'");
+$result1 = mysql_fetch_array($punch_check);
+$tstamp5 = $result1['tstamp'];
+$punch_check_info = mysql_query("select * from info where timestamp = '".$tstamp5."'");
+$result2 = mysql_fetch_array($punch_check_info);
+$current_status = $result2['inout'];
+if($current_status == $inout){
+	echo '<div class="row">
+	                <div class="col-lg-6"><p>
+	                            <div class="alert alert-danger">
+	                                <i class="fa fa-warning fw"></i>You are already punched <a href="#" class="alert-link">'.$inout.'</a>.
+	                            </div>
+	</p></div>
+	<!-- /.col-lg-6 -->
+	</div>
+	<!-- /.row -->';
+
+}else {
+// end double in out except four ending bracket in the end of the page//
 
     // configure timestamp to insert/update //
 
@@ -564,5 +614,6 @@ if ($request == 'POST') {
         }
 
     }
+}
 }
 ?>
