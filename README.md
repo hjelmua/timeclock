@@ -1,3 +1,10 @@
+New version
+=====
+Look here for the latest version of timeclock https://github.com/hjelmua/php-timeclock
+
+
+
+
 About
 =====
 
